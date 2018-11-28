@@ -1,0 +1,1238 @@
+<?xml version="1.0" ?>
+<config>
+  <teams>
+    <team city="Boston" name="Celtics" id="1" short_name="BOS"/>
+    <team city="Brooklyn" name="Nets" id="2" short_name="BKN"/>
+    <team city="New York" name="Knicks" id="3" short_name="NYK"/>
+    <team city="Philadelphia" name="76ers" id="4" short_name="PHI"/>
+    <team city="Toronto" name="Raptors" id="5" short_name="TOR"/>
+    <team city="Chicago" name="Bulls" id="6" short_name="CHI"/>
+    <team city="Cleveland" name="Cavaliers" id="7" short_name="CLE"/>
+    <team city="Detroit" name="Pistons" id="8" short_name="DET"/>
+    <team city="Indiana" name="Pacers" id="9" short_name="IND"/>
+    <team city="Milwaukee" name="Bucks" id="10" short_name="MIL"/>
+    <team city="Atlanta" name="Hawks" id="11" short_name="ATL"/>
+    <team city="Charlotte" name="Hornets" id="12" short_name="CHA"/>
+    <team city="Miami" name="Heat" id="13" short_name="MIA"/>
+    <team city="Orlando" name="Magic" id="14" short_name="ORL"/>
+    <team city="Washington" name="Wizards" id="15" short_name="WAS"/>
+    <team city="Denver" name="Nuggets" id="16" short_name="DEN"/>
+    <team city="Minnesota" name="Timberwolves" id="17" short_name="MIN"/>
+    <team city="Oklahoma City" name="Thunder" id="18" short_name="OKC"/>
+    <team city="Portland" name="Trail Blazers" id="19" short_name="POR"/>
+    <team city="Utah" name="Jazz" id="20" short_name="UTA"/>
+    <team city="Golden State" name="Warriors" id="21" short_name="GSW"/>
+    <team city="Los Angeles" name="Clippers" id="22" short_name="LAC"/>
+    <team city="Los Angeles" name="Lakers" id="23" short_name="LAL"/>
+    <team city="Phoenix" name="Suns" id="24" short_name="PHO"/>
+    <team city="Sacramento" name="Kings" id="25" short_name="SAC"/>
+    <team city="Dallas" name="Mavericks" id="26" short_name="DAL"/>
+    <team city="Houston" name="Rockets" id="27" short_name="HOU"/>
+    <team city="Memphis" name="Grizzlies" id="28" short_name="MEM"/>
+    <team city="New Orleans" name="Pelicans" id="29" short_name="NOR"/>
+    <team city="San Antonio" name="Spurs" id="30" short_name="SAS"/>
+    <team city="" name="Free Agents" id="31" short_name="FAN"/>  </teams>
+  <players>
+    <player id="1" name="T. Young">
+      <team>ATL</team>
+      <offense>
+        <two_point>75</two_point>
+        <three_point>73</three_point>
+      </offense>
+      <defense>61</defense>
+    </player>
+    <player id="2" name="K. Irving">
+      <team>BOS</team>
+      <offense>
+        <two_point>90</two_point>
+        <three_point>82</three_point>
+      </offense>
+      <defense>60</defense>
+    </player>
+    <player id="3" name="D. Russell">
+      <team>BKN</team>
+      <offense>
+        <two_point>89</two_point>
+        <three_point>89</three_point>
+      </offense>
+      <defense>56</defense>
+    </player>
+    <player id="4" name="K. Walker">
+      <team>CHA</team>
+      <offense>
+        <two_point>89</two_point>
+        <three_point>63</three_point>
+      </offense>
+      <defense>87</defense>
+    </player>
+    <player id="5" name="C. Payne">
+      <team>CHI</team>
+      <offense>
+        <two_point>79</two_point>
+        <three_point>57</three_point>
+      </offense>
+      <defense>52</defense>
+    </player>
+    <player id="6" name="C. Sexton">
+      <team>CLE</team>
+      <offense>
+        <two_point>70</two_point>
+        <three_point>67</three_point>
+      </offense>
+      <defense>65</defense>
+    </player>
+    <player id="7" name="D. Smith Jr.">
+      <team>DAL</team>
+      <offense>
+        <two_point>56</two_point>
+        <three_point>70</three_point>
+      </offense>
+      <defense>85</defense>
+    </player>
+    <player id="8" name="J. Murray">
+      <team>DEN</team>
+      <offense>
+        <two_point>63</two_point>
+        <three_point>73</three_point>
+      </offense>
+      <defense>62</defense>
+    </player>
+    <player id="9" name="R. Jackson">
+      <team>DET</team>
+      <offense>
+        <two_point>66</two_point>
+        <three_point>64</three_point>
+      </offense>
+      <defense>76</defense>
+    </player>
+    <player id="10" name="S. Curry">
+      <team>GSW</team>
+      <offense>
+        <two_point>79</two_point>
+        <three_point>59</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="11" name="C. Paul">
+      <team>HOU</team>
+      <offense>
+        <two_point>59</two_point>
+        <three_point>60</three_point>
+      </offense>
+      <defense>83</defense>
+    </player>
+    <player id="12" name="D. Collison">
+      <team>IND</team>
+      <offense>
+        <two_point>51</two_point>
+        <three_point>51</three_point>
+      </offense>
+      <defense>86</defense>
+    </player>
+    <player id="13" name="P. Beverley">
+      <team>LAC</team>
+      <offense>
+        <two_point>89</two_point>
+        <three_point>55</three_point>
+      </offense>
+      <defense>77</defense>
+    </player>
+    <player id="14" name="L. Ball">
+      <team>LAL</team>
+      <offense>
+        <two_point>80</two_point>
+        <three_point>72</three_point>
+      </offense>
+      <defense>72</defense>
+    </player>
+    <player id="15" name="M. Conley">
+      <team>MEM</team>
+      <offense>
+        <two_point>70</two_point>
+        <three_point>66</three_point>
+      </offense>
+      <defense>66</defense>
+    </player>
+    <player id="16" name="G. Dragic">
+      <team>MIA</team>
+      <offense>
+        <two_point>75</two_point>
+        <three_point>80</three_point>
+      </offense>
+      <defense>73</defense>
+    </player>
+    <player id="17" name="E. Bledsoe">
+      <team>MIL</team>
+      <offense>
+        <two_point>50</two_point>
+        <three_point>50</three_point>
+      </offense>
+      <defense>75</defense>
+    </player>
+    <player id="18" name="J. Teague">
+      <team>MIN</team>
+      <offense>
+        <two_point>70</two_point>
+        <three_point>51</three_point>
+      </offense>
+      <defense>54</defense>
+    </player>
+    <player id="19" name="E. Payton">
+      <team>NOR</team>
+      <offense>
+        <two_point>61</two_point>
+        <three_point>68</three_point>
+      </offense>
+      <defense>87</defense>
+    </player>
+    <player id="20" name="F. Ntilikina">
+      <team>NYK</team>
+      <offense>
+        <two_point>84</two_point>
+        <three_point>77</three_point>
+      </offense>
+      <defense>74</defense>
+    </player>
+    <player id="21" name="R. Westbrook">
+      <team>OKC</team>
+      <offense>
+        <two_point>86</two_point>
+        <three_point>72</three_point>
+      </offense>
+      <defense>83</defense>
+    </player>
+    <player id="22" name="D. Augustin">
+      <team>ORL</team>
+      <offense>
+        <two_point>86</two_point>
+        <three_point>70</three_point>
+      </offense>
+      <defense>68</defense>
+    </player>
+    <player id="23" name="B. Simmons">
+      <team>PHI</team>
+      <offense>
+        <two_point>60</two_point>
+        <three_point>62</three_point>
+      </offense>
+      <defense>59</defense>
+    </player>
+    <player id="24" name="E. Okobo">
+      <team>PHO</team>
+      <offense>
+        <two_point>60</two_point>
+        <three_point>70</three_point>
+      </offense>
+      <defense>84</defense>
+    </player>
+    <player id="25" name="D. Lillard">
+      <team>POR</team>
+      <offense>
+        <two_point>77</two_point>
+        <three_point>67</three_point>
+      </offense>
+      <defense>65</defense>
+    </player>
+    <player id="26" name="D. Fox">
+      <team>SAC</team>
+      <offense>
+        <two_point>71</two_point>
+        <three_point>88</three_point>
+      </offense>
+      <defense>87</defense>
+    </player>
+    <player id="27" name="B. Forbes">
+      <team>SAS</team>
+      <offense>
+        <two_point>89</two_point>
+        <three_point>78</three_point>
+      </offense>
+      <defense>66</defense>
+    </player>
+    <player id="28" name="K. Lowry">
+      <team>TOR</team>
+      <offense>
+        <two_point>73</two_point>
+        <three_point>79</three_point>
+      </offense>
+      <defense>84</defense>
+    </player>
+    <player id="29" name="R. Rubio">
+      <team>UTA</team>
+      <offense>
+        <two_point>67</two_point>
+        <three_point>81</three_point>
+      </offense>
+      <defense>82</defense>
+    </player>
+    <player id="30" name="J. Wall">
+      <team>WAS</team>
+      <offense>
+        <two_point>77</two_point>
+        <three_point>68</three_point>
+      </offense>
+      <defense>81</defense>
+    </player>
+    <player id="31" name="K. Bazemore">
+      <team>ATL</team>
+      <offense>
+        <two_point>80</two_point>
+        <three_point>83</three_point>
+      </offense>
+      <defense>62</defense>
+    </player>
+    <player id="32" name="J. Brown">
+      <team>BOS</team>
+      <offense>
+        <two_point>78</two_point>
+        <three_point>78</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="33" name="C. LeVert">
+      <team>BKN</team>
+      <offense>
+        <two_point>57</two_point>
+        <three_point>82</three_point>
+      </offense>
+      <defense>63</defense>
+    </player>
+    <player id="34" name="J. Lamb">
+      <team>CHA</team>
+      <offense>
+        <two_point>60</two_point>
+        <three_point>62</three_point>
+      </offense>
+      <defense>74</defense>
+    </player>
+    <player id="35" name="Z. LaVine">
+      <team>CHI</team>
+      <offense>
+        <two_point>58</two_point>
+        <three_point>69</three_point>
+      </offense>
+      <defense>86</defense>
+    </player>
+    <player id="36" name="R. Hood">
+      <team>CLE</team>
+      <offense>
+        <two_point>67</two_point>
+        <three_point>70</three_point>
+      </offense>
+      <defense>70</defense>
+    </player>
+    <player id="37" name="L. Doncic">
+      <team>DAL</team>
+      <offense>
+        <two_point>67</two_point>
+        <three_point>86</three_point>
+      </offense>
+      <defense>81</defense>
+    </player>
+    <player id="38" name="G. Harris">
+      <team>DEN</team>
+      <offense>
+        <two_point>64</two_point>
+        <three_point>88</three_point>
+      </offense>
+      <defense>67</defense>
+    </player>
+    <player id="39" name="R. Bullock">
+      <team>DET</team>
+      <offense>
+        <two_point>62</two_point>
+        <three_point>77</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="40" name="K. Thompson">
+      <team>GSW</team>
+      <offense>
+        <two_point>83</two_point>
+        <three_point>82</three_point>
+      </offense>
+      <defense>75</defense>
+    </player>
+    <player id="41" name="J. Harden">
+      <team>HOU</team>
+      <offense>
+        <two_point>64</two_point>
+        <three_point>51</three_point>
+      </offense>
+      <defense>75</defense>
+    </player>
+    <player id="42" name="V. Oladipo">
+      <team>IND</team>
+      <offense>
+        <two_point>77</two_point>
+        <three_point>73</three_point>
+      </offense>
+      <defense>65</defense>
+    </player>
+    <player id="43" name="S. Gilgeous-Alexander">
+      <team>LAC</team>
+      <offense>
+        <two_point>67</two_point>
+        <three_point>83</three_point>
+      </offense>
+      <defense>79</defense>
+    </player>
+    <player id="44" name="B. Ingram">
+      <team>LAL</team>
+      <offense>
+        <two_point>75</two_point>
+        <three_point>75</three_point>
+      </offense>
+      <defense>75</defense>
+    </player>
+    <player id="45" name="G. Temple">
+      <team>MEM</team>
+      <offense>
+        <two_point>78</two_point>
+        <three_point>73</three_point>
+      </offense>
+      <defense>70</defense>
+    </player>
+    <player id="46" name="R. McGruder">
+      <team>MIA</team>
+      <offense>
+        <two_point>74</two_point>
+        <three_point>68</three_point>
+      </offense>
+      <defense>73</defense>
+    </player>
+    <player id="47" name="M. Brogdon">
+      <team>MIL</team>
+      <offense>
+        <two_point>61</two_point>
+        <three_point>66</three_point>
+      </offense>
+      <defense>83</defense>
+    </player>
+    <player id="48" name="A. Wiggins">
+      <team>MIN</team>
+      <offense>
+        <two_point>67</two_point>
+        <three_point>64</three_point>
+      </offense>
+      <defense>56</defense>
+    </player>
+    <player id="49" name="J. Holiday">
+      <team>NOR</team>
+      <offense>
+        <two_point>50</two_point>
+        <three_point>63</three_point>
+      </offense>
+      <defense>87</defense>
+    </player>
+    <player id="50" name="D. Dotson">
+      <team>NYK</team>
+      <offense>
+        <two_point>85</two_point>
+        <three_point>89</three_point>
+      </offense>
+      <defense>81</defense>
+    </player>
+    <player id="51" name="T. Ferguson">
+      <team>OKC</team>
+      <offense>
+        <two_point>57</two_point>
+        <three_point>84</three_point>
+      </offense>
+      <defense>66</defense>
+    </player>
+    <player id="52" name="E. Fournier">
+      <team>ORL</team>
+      <offense>
+        <two_point>88</two_point>
+        <three_point>62</three_point>
+      </offense>
+      <defense>67</defense>
+    </player>
+    <player id="53" name="J. Redick">
+      <team>PHI</team>
+      <offense>
+        <two_point>63</two_point>
+        <three_point>87</three_point>
+      </offense>
+      <defense>63</defense>
+    </player>
+    <player id="54" name="D. Booker">
+      <team>PHO</team>
+      <offense>
+        <two_point>53</two_point>
+        <three_point>52</three_point>
+      </offense>
+      <defense>51</defense>
+    </player>
+    <player id="55" name="C. McCollum">
+      <team>POR</team>
+      <offense>
+        <two_point>60</two_point>
+        <three_point>65</three_point>
+      </offense>
+      <defense>59</defense>
+    </player>
+    <player id="56" name="I. Shumpert">
+      <team>SAC</team>
+      <offense>
+        <two_point>83</two_point>
+        <three_point>77</three_point>
+      </offense>
+      <defense>64</defense>
+    </player>
+    <player id="57" name="D. DeRozan">
+      <team>SAS</team>
+      <offense>
+        <two_point>71</two_point>
+        <three_point>52</three_point>
+      </offense>
+      <defense>78</defense>
+    </player>
+    <player id="58" name="D. Green">
+      <team>TOR</team>
+      <offense>
+        <two_point>52</two_point>
+        <three_point>83</three_point>
+      </offense>
+      <defense>88</defense>
+    </player>
+    <player id="59" name="D. Mitchell">
+      <team>UTA</team>
+      <offense>
+        <two_point>60</two_point>
+        <three_point>78</three_point>
+      </offense>
+      <defense>85</defense>
+    </player>
+    <player id="60" name="B. Beal">
+      <team>WAS</team>
+      <offense>
+        <two_point>58</two_point>
+        <three_point>79</three_point>
+      </offense>
+      <defense>87</defense>
+    </player>
+    <player id="61" name="T. Prince">
+      <team>ATL</team>
+      <offense>
+        <two_point>88</two_point>
+        <three_point>71</three_point>
+      </offense>
+      <defense>52</defense>
+    </player>
+    <player id="62" name="J. Tatum">
+      <team>BOS</team>
+      <offense>
+        <two_point>87</two_point>
+        <three_point>84</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="63" name="J. Harris">
+      <team>BKN</team>
+      <offense>
+        <two_point>87</two_point>
+        <three_point>68</three_point>
+      </offense>
+      <defense>84</defense>
+    </player>
+    <player id="64" name="N. Batum">
+      <team>CHA</team>
+      <offense>
+        <two_point>87</two_point>
+        <three_point>61</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="65" name="J. Holiday">
+      <team>CHI</team>
+      <offense>
+        <two_point>82</two_point>
+        <three_point>53</three_point>
+      </offense>
+      <defense>67</defense>
+    </player>
+    <player id="66" name="C. Osman">
+      <team>CLE</team>
+      <offense>
+        <two_point>67</two_point>
+        <three_point>68</three_point>
+      </offense>
+      <defense>67</defense>
+    </player>
+    <player id="67" name="W. Matthews">
+      <team>DAL</team>
+      <offense>
+        <two_point>70</two_point>
+        <three_point>64</three_point>
+      </offense>
+      <defense>52</defense>
+    </player>
+    <player id="68" name="T. Craig">
+      <team>DEN</team>
+      <offense>
+        <two_point>64</two_point>
+        <three_point>83</three_point>
+      </offense>
+      <defense>78</defense>
+    </player>
+    <player id="69" name="S. Johnson">
+      <team>DET</team>
+      <offense>
+        <two_point>53</two_point>
+        <three_point>70</three_point>
+      </offense>
+      <defense>57</defense>
+    </player>
+    <player id="70" name="K. Durant">
+      <team>GSW</team>
+      <offense>
+        <two_point>64</two_point>
+        <three_point>77</three_point>
+      </offense>
+      <defense>87</defense>
+    </player>
+    <player id="71" name="J. Ennis III">
+      <team>HOU</team>
+      <offense>
+        <two_point>83</two_point>
+        <three_point>54</three_point>
+      </offense>
+      <defense>77</defense>
+    </player>
+    <player id="72" name="B. Bogdanovic">
+      <team>IND</team>
+      <offense>
+        <two_point>76</two_point>
+        <three_point>70</three_point>
+      </offense>
+      <defense>55</defense>
+    </player>
+    <player id="73" name="D. Gallinari">
+      <team>LAC</team>
+      <offense>
+        <two_point>78</two_point>
+        <three_point>71</three_point>
+      </offense>
+      <defense>64</defense>
+    </player>
+    <player id="74" name="L. James">
+      <team>LAL</team>
+      <offense>
+        <two_point>99</two_point>
+        <three_point>82</three_point>
+      </offense>
+      <defense>89</defense>
+    </player>
+    <player id="75" name="K. Anderson">
+      <team>MEM</team>
+      <offense>
+        <two_point>52</two_point>
+        <three_point>75</three_point>
+      </offense>
+      <defense>82</defense>
+    </player>
+    <player id="76" name="J. Richardson">
+      <team>MIA</team>
+      <offense>
+        <two_point>72</two_point>
+        <three_point>84</three_point>
+      </offense>
+      <defense>62</defense>
+    </player>
+    <player id="77" name="K. Middleton">
+      <team>MIL</team>
+      <offense>
+        <two_point>68</two_point>
+        <three_point>89</three_point>
+      </offense>
+      <defense>61</defense>
+    </player>
+    <player id="78" name="R. Covington">
+      <team>MIN</team>
+      <offense>
+        <two_point>50</two_point>
+        <three_point>86</three_point>
+      </offense>
+      <defense>88</defense>
+    </player>
+    <player id="79" name="E. Moore">
+      <team>NOR</team>
+      <offense>
+        <two_point>76</two_point>
+        <three_point>86</three_point>
+      </offense>
+      <defense>87</defense>
+    </player>
+    <player id="80" name="T. Hardaway Jr.">
+      <team>NYK</team>
+      <offense>
+        <two_point>72</two_point>
+        <three_point>74</three_point>
+      </offense>
+      <defense>66</defense>
+    </player>
+    <player id="81" name="P. George">
+      <team>OKC</team>
+      <offense>
+        <two_point>67</two_point>
+        <three_point>80</three_point>
+      </offense>
+      <defense>54</defense>
+    </player>
+    <player id="82" name="J. Isaac">
+      <team>ORL</team>
+      <offense>
+        <two_point>81</two_point>
+        <three_point>67</three_point>
+      </offense>
+      <defense>70</defense>
+    </player>
+    <player id="83" name="J. Butler">
+      <team>PHI</team>
+      <offense>
+        <two_point>52</two_point>
+        <three_point>65</three_point>
+      </offense>
+      <defense>57</defense>
+    </player>
+    <player id="84" name="T. Ariza">
+      <team>PHO</team>
+      <offense>
+        <two_point>65</two_point>
+        <three_point>68</three_point>
+      </offense>
+      <defense>68</defense>
+    </player>
+    <player id="85" name="J. Layman">
+      <team>POR</team>
+      <offense>
+        <two_point>71</two_point>
+        <three_point>57</three_point>
+      </offense>
+      <defense>65</defense>
+    </player>
+    <player id="86" name="B. Hield">
+      <team>SAC</team>
+      <offense>
+        <two_point>65</two_point>
+        <three_point>87</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="87" name="R. Gay">
+      <team>SAS</team>
+      <offense>
+        <two_point>57</two_point>
+        <three_point>77</three_point>
+      </offense>
+      <defense>86</defense>
+    </player>
+    <player id="88" name="K. Leonard">
+      <team>TOR</team>
+      <offense>
+        <two_point>82</two_point>
+        <three_point>82</three_point>
+      </offense>
+      <defense>74</defense>
+    </player>
+    <player id="89" name="J. Ingles">
+      <team>UTA</team>
+      <offense>
+        <two_point>88</two_point>
+        <three_point>55</three_point>
+      </offense>
+      <defense>87</defense>
+    </player>
+    <player id="90" name="O. Porter Jr.">
+      <team>WAS</team>
+      <offense>
+        <two_point>53</two_point>
+        <three_point>51</three_point>
+      </offense>
+      <defense>89</defense>
+    </player>
+    <player id="91" name="J. Collins">
+      <team>ATL</team>
+      <offense>
+        <two_point>60</two_point>
+        <three_point>84</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="92" name="A. Baynes">
+      <team>BOS</team>
+      <offense>
+        <two_point>70</two_point>
+        <three_point>50</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="93" name="J. Dudley">
+      <team>BKN</team>
+      <offense>
+        <two_point>70</two_point>
+        <three_point>73</three_point>
+      </offense>
+      <defense>61</defense>
+    </player>
+    <player id="94" name="M. Williams">
+      <team>CHA</team>
+      <offense>
+        <two_point>73</two_point>
+        <three_point>70</three_point>
+      </offense>
+      <defense>87</defense>
+    </player>
+    <player id="95" name="J. Parker">
+      <team>CHI</team>
+      <offense>
+        <two_point>81</two_point>
+        <three_point>63</three_point>
+      </offense>
+      <defense>60</defense>
+    </player>
+    <player id="96" name="L. Nance Jr.">
+      <team>CLE</team>
+      <offense>
+        <two_point>72</two_point>
+        <three_point>67</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="97" name="H. Barnes">
+      <team>DAL</team>
+      <offense>
+        <two_point>72</two_point>
+        <three_point>74</three_point>
+      </offense>
+      <defense>79</defense>
+    </player>
+    <player id="98" name="P. Millsap">
+      <team>DEN</team>
+      <offense>
+        <two_point>75</two_point>
+        <three_point>56</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="99" name="B. Griffin">
+      <team>DET</team>
+      <offense>
+        <two_point>70</two_point>
+        <three_point>56</three_point>
+      </offense>
+      <defense>77</defense>
+    </player>
+    <player id="100" name="D. Green">
+      <team>GSW</team>
+      <offense>
+        <two_point>66</two_point>
+        <three_point>57</three_point>
+      </offense>
+      <defense>74</defense>
+    </player>
+    <player id="101" name="P. Tucker">
+      <team>HOU</team>
+      <offense>
+        <two_point>69</two_point>
+        <three_point>82</three_point>
+      </offense>
+      <defense>84</defense>
+    </player>
+    <player id="102" name="T. Young">
+      <team>IND</team>
+      <offense>
+        <two_point>53</two_point>
+        <three_point>65</three_point>
+      </offense>
+      <defense>70</defense>
+    </player>
+    <player id="103" name="T. Harris">
+      <team>LAC</team>
+      <offense>
+        <two_point>73</two_point>
+        <three_point>69</three_point>
+      </offense>
+      <defense>71</defense>
+    </player>
+    <player id="104" name="K. Kuzma">
+      <team>LAL</team>
+      <offense>
+        <two_point>75</two_point>
+        <three_point>69</three_point>
+      </offense>
+      <defense>78</defense>
+    </player>
+    <player id="105" name="J. Jackson Jr.">
+      <team>MEM</team>
+      <offense>
+        <two_point>67</two_point>
+        <three_point>70</three_point>
+      </offense>
+      <defense>51</defense>
+    </player>
+    <player id="106" name="K. Olynyk">
+      <team>MIA</team>
+      <offense>
+        <two_point>50</two_point>
+        <three_point>71</three_point>
+      </offense>
+      <defense>78</defense>
+    </player>
+    <player id="107" name="G. Antetokounmpo">
+      <team>MIL</team>
+      <offense>
+        <two_point>70</two_point>
+        <three_point>79</three_point>
+      </offense>
+      <defense>69</defense>
+    </player>
+    <player id="108" name="D. Saric">
+      <team>MIN</team>
+      <offense>
+        <two_point>64</two_point>
+        <three_point>57</three_point>
+      </offense>
+      <defense>60</defense>
+    </player>
+    <player id="109" name="N. Mirotic">
+      <team>NOR</team>
+      <offense>
+        <two_point>73</two_point>
+        <three_point>85</three_point>
+      </offense>
+      <defense>82</defense>
+    </player>
+    <player id="110" name="N. Vonleh">
+      <team>NYK</team>
+      <offense>
+        <two_point>68</two_point>
+        <three_point>68</three_point>
+      </offense>
+      <defense>77</defense>
+    </player>
+    <player id="111" name="J. Grant">
+      <team>OKC</team>
+      <offense>
+        <two_point>61</two_point>
+        <three_point>63</three_point>
+      </offense>
+      <defense>84</defense>
+    </player>
+    <player id="112" name="A. Gordon">
+      <team>ORL</team>
+      <offense>
+        <two_point>86</two_point>
+        <three_point>76</three_point>
+      </offense>
+      <defense>62</defense>
+    </player>
+    <player id="113" name="W. Chandler">
+      <team>PHI</team>
+      <offense>
+        <two_point>72</two_point>
+        <three_point>52</three_point>
+      </offense>
+      <defense>86</defense>
+    </player>
+    <player id="114" name="R. Anderson">
+      <team>PHO</team>
+      <offense>
+        <two_point>57</two_point>
+        <three_point>65</three_point>
+      </offense>
+      <defense>63</defense>
+    </player>
+    <player id="115" name="A. Aminu">
+      <team>POR</team>
+      <offense>
+        <two_point>64</two_point>
+        <three_point>59</three_point>
+      </offense>
+      <defense>69</defense>
+    </player>
+    <player id="116" name="N. Bjelica">
+      <team>SAC</team>
+      <offense>
+        <two_point>64</two_point>
+        <three_point>86</three_point>
+      </offense>
+      <defense>89</defense>
+    </player>
+    <player id="117" name="L. Aldridge">
+      <team>SAS</team>
+      <offense>
+        <two_point>59</two_point>
+        <three_point>51</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="118" name="P. Siakam">
+      <team>TOR</team>
+      <offense>
+        <two_point>60</two_point>
+        <three_point>84</three_point>
+      </offense>
+      <defense>62</defense>
+    </player>
+    <player id="119" name="D. Favors">
+      <team>UTA</team>
+      <offense>
+        <two_point>53</two_point>
+        <three_point>64</three_point>
+      </offense>
+      <defense>86</defense>
+    </player>
+    <player id="120" name="M. Morris">
+      <team>WAS</team>
+      <offense>
+        <two_point>83</two_point>
+        <three_point>65</three_point>
+      </offense>
+      <defense>51</defense>
+    </player>
+    <player id="121" name="D. Dedmon">
+      <team>ATL</team>
+      <offense>
+        <two_point>66</two_point>
+        <three_point>54</three_point>
+      </offense>
+      <defense>78</defense>
+    </player>
+    <player id="122" name="A. Horford">
+      <team>BOS</team>
+      <offense>
+        <two_point>79</two_point>
+        <three_point>72</three_point>
+      </offense>
+      <defense>79</defense>
+    </player>
+    <player id="123" name="J. Allen">
+      <team>BKN</team>
+      <offense>
+        <two_point>78</two_point>
+        <three_point>87</three_point>
+      </offense>
+      <defense>71</defense>
+    </player>
+    <player id="124" name="C. Zeller">
+      <team>CHA</team>
+      <offense>
+        <two_point>75</two_point>
+        <three_point>69</three_point>
+      </offense>
+      <defense>75</defense>
+    </player>
+    <player id="125" name="W. Carter Jr.">
+      <team>CHI</team>
+      <offense>
+        <two_point>68</two_point>
+        <three_point>64</three_point>
+      </offense>
+      <defense>62</defense>
+    </player>
+    <player id="126" name="T. Thompson">
+      <team>CLE</team>
+      <offense>
+        <two_point>68</two_point>
+        <three_point>50</three_point>
+      </offense>
+      <defense>85</defense>
+    </player>
+    <player id="127" name="D. Jordan">
+      <team>DAL</team>
+      <offense>
+        <two_point>75</two_point>
+        <three_point>87</three_point>
+      </offense>
+      <defense>80</defense>
+    </player>
+    <player id="128" name="N. Jokic">
+      <team>DEN</team>
+      <offense>
+        <two_point>80</two_point>
+        <three_point>53</three_point>
+      </offense>
+      <defense>62</defense>
+    </player>
+    <player id="129" name="A. Drummond">
+      <team>DET</team>
+      <offense>
+        <two_point>81</two_point>
+        <three_point>88</three_point>
+      </offense>
+      <defense>88</defense>
+    </player>
+    <player id="130" name="D. Cousins">
+      <team>GSW</team>
+      <offense>
+        <two_point>70</two_point>
+        <three_point>73</three_point>
+      </offense>
+      <defense>68</defense>
+    </player>
+    <player id="131" name="C. Capela">
+      <team>HOU</team>
+      <offense>
+        <two_point>86</two_point>
+        <three_point>76</three_point>
+      </offense>
+      <defense>62</defense>
+    </player>
+    <player id="132" name="M. Turner">
+      <team>IND</team>
+      <offense>
+        <two_point>54</two_point>
+        <three_point>71</three_point>
+      </offense>
+      <defense>73</defense>
+    </player>
+    <player id="133" name="B. Marjanovic">
+      <team>LAC</team>
+      <offense>
+        <two_point>88</two_point>
+        <three_point>77</three_point>
+      </offense>
+      <defense>57</defense>
+    </player>
+    <player id="134" name="J. McGee">
+      <team>LAL</team>
+      <offense>
+        <two_point>75</two_point>
+        <three_point>50</three_point>
+      </offense>
+      <defense>85</defense>
+    </player>
+    <player id="135" name="M. Gasol">
+      <team>MEM</team>
+      <offense>
+        <two_point>80</two_point>
+        <three_point>61</three_point>
+      </offense>
+      <defense>50</defense>
+    </player>
+    <player id="136" name="H. Whiteside">
+      <team>MIA</team>
+      <offense>
+        <two_point>69</two_point>
+        <three_point>64</three_point>
+      </offense>
+      <defense>70</defense>
+    </player>
+    <player id="137" name="B. Lopez">
+      <team>MIL</team>
+      <offense>
+        <two_point>79</two_point>
+        <three_point>82</three_point>
+      </offense>
+      <defense>77</defense>
+    </player>
+    <player id="138" name="K. Towns">
+      <team>MIN</team>
+      <offense>
+        <two_point>79</two_point>
+        <three_point>79</three_point>
+      </offense>
+      <defense>65</defense>
+    </player>
+    <player id="139" name="A. Davis">
+      <team>NOR</team>
+      <offense>
+        <two_point>71</two_point>
+        <three_point>66</three_point>
+      </offense>
+      <defense>51</defense>
+    </player>
+    <player id="140" name="M. Robinson">
+      <team>NYK</team>
+      <offense>
+        <two_point>52</two_point>
+        <three_point>67</three_point>
+      </offense>
+      <defense>82</defense>
+    </player>
+    <player id="141" name="S. Adams">
+      <team>OKC</team>
+      <offense>
+        <two_point>88</two_point>
+        <three_point>75</three_point>
+      </offense>
+      <defense>56</defense>
+    </player>
+    <player id="142" name="N. Vucevic">
+      <team>ORL</team>
+      <offense>
+        <two_point>54</two_point>
+        <three_point>68</three_point>
+      </offense>
+      <defense>71</defense>
+    </player>
+    <player id="143" name="J. Embiid">
+      <team>PHI</team>
+      <offense>
+        <two_point>57</two_point>
+        <three_point>52</three_point>
+      </offense>
+      <defense>74</defense>
+    </player>
+    <player id="144" name="D. Ayton">
+      <team>PHO</team>
+      <offense>
+        <two_point>64</two_point>
+        <three_point>68</three_point>
+      </offense>
+      <defense>54</defense>
+    </player>
+    <player id="145" name="J. Nurkic">
+      <team>POR</team>
+      <offense>
+        <two_point>62</two_point>
+        <three_point>53</three_point>
+      </offense>
+      <defense>62</defense>
+    </player>
+    <player id="146" name="W. Cauley-Stein">
+      <team>SAC</team>
+      <offense>
+        <two_point>63</two_point>
+        <three_point>86</three_point>
+      </offense>
+      <defense>57</defense>
+    </player>
+    <player id="147" name="P. Gasol">
+      <team>SAS</team>
+      <offense>
+        <two_point>60</two_point>
+        <three_point>74</three_point>
+      </offense>
+      <defense>85</defense>
+    </player>
+    <player id="148" name="S. Ibaka">
+      <team>TOR</team>
+      <offense>
+        <two_point>80</two_point>
+        <three_point>50</three_point>
+      </offense>
+      <defense>74</defense>
+    </player>
+    <player id="149" name="R. Gobert">
+      <team>UTA</team>
+      <offense>
+        <two_point>56</two_point>
+        <three_point>89</three_point>
+      </offense>
+      <defense>59</defense>
+    </player>
+    <player id="150" name="D. Howard">
+      <team>WAS</team>
+      <offense>
+        <two_point>84</two_point>
+        <three_point>55</three_point>
+      </offense>
+      <defense>63</defense>
+    </player>
+    >>>
+  </players>
+</config>
