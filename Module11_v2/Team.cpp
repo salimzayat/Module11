@@ -1,52 +1,88 @@
 #include "pch.h"
 #include "Team.h"
-#include <time.h>
 #include <iostream>
+#include "Defines.h"
 
-AbstractTeam::AbstractTeam(const char* pName)
+
+BasketballTeam::BasketballTeam(int id, const char* pName, const char* pCity, const char* pAbbreviation)
 	: m_pName(pName)
-{
-	// see the rand
-	srand(time(NULL));
-}
-
-int AbstractTeam::GenerateRandomInt(int min, int max)
-{
-	// generate a random int between [min, max)
-	return min + rand() % (max - min);
-}
-
-
-
-
-BasketballTeam::BasketballTeam(const char* pName)
-	: AbstractTeam(pName)
+	, m_id(id)
+	, m_city(pCity)
+	, m_pAbbreviation(pAbbreviation)
 	, m_score(0)
 {
+	
+}
+
+Player* BasketballTeam::SelectPlayer()
+{
+	// apply some heurisitc?  go with the hot-hand?
+	// for now, randomly choose
+	Player* pResult = m_players.front();
+
+	int place = RollRandomNumber(0, m_players.size());
+	for (Player* pPlayer : m_players)
+	{
+		if (pPlayer->GetPosition() == place)
+		{
+			pResult = pPlayer;
+			break;
+		}
+	}
+	
+	// return it
+	// see if this workds
+	pResult->DispatchEvent(new ReceivePassEvent(pResult));
+	return pResult;
 
 }
 
-void BasketballTeam::Update()
+Player* BasketballTeam::GetPlayerForPosition(Position position)
 {
-	// roll a random number between 0 and 100
-	// most basketball teams shoot around 50%, with about 40% of those (i.e. 20% total) makes being 3-pointers
-	// so the distribution should be:
-	// 0 - 49: miss
-	// 50 - 79: 2 pointer
-	// 80 - 99: 4 pointer
-	int action = GenerateRandomInt(0, 100);
-	if ((action >= 0) && action < 50)
+	for (Player* pPlayer : m_players)
 	{
-		std::cout << GetName() << " miss" << std::endl;
+		if (pPlayer->GetPosition() == position)
+		{
+			return pPlayer;
+		}
 	}
-	else if (action < 80)
+	return nullptr;
+}
+
+void BasketballTeam::OnEvent(Event* pEvent)
+{
+	switch (pEvent->GetType())
 	{
-		std::cout << GetName() << " make a 2-pointer" << std::endl;
-		m_score += 2;
+	case EventType::ATTEMPT_SHOT:
+		HandleAttempShot((AttemptShotEvent*)pEvent);
+		break;
+	case EventType::RECEIVE_PASS:
+		HandlePlayerReceivePass((ReceivePassEvent*)pEvent);
+		break;
 	}
-	else
+}
+
+void BasketballTeam::HandleAttempShot(AttemptShotEvent* pEvent)
+{
+	if (pEvent->GetSuccess())
 	{
-		std::cout << GetName() << " make a 3-pointer" << std::endl;
-		m_score += 3;
+		// update the score
+		m_score += pEvent->GetExpectedPoints();
+		// and dispatch
+		DispatchEvent(new ScoreUpdateEvent(this));
 	}
+}
+
+Player* BasketballTeam::GetPlayerGuarding(Player* pOpponentPlayer)
+{
+	return GetPlayerForPosition(pOpponentPlayer->GetPosition());
+}
+
+void BasketballTeam::HandlePlayerReceivePass(ReceivePassEvent* pEvent)
+{
+	// In a normal game, you might determine the closest player and have
+	// that player switch to the player who just received a pass
+	// at that point, you might set your player to be in a strategy that players them
+	// up on the ball. We will just print it out
+	std::cout << "oppponent " << pEvent->GetPlayer()->GetName() << " just received a pass. guarded by " << GetPlayerForPosition(pEvent->GetPlayer()->GetPosition())->GetName() << std::endl;
 }

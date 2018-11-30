@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "Defines.h"
 #include <string>
+#include <time.h>
+
+const std::string DeleteMe::k_name = "Cavs";
 
 int CalculateGridIndex(int width, int height, int x, int y)
 {
@@ -60,4 +63,9 @@ const char* GetStringForPosition(Position pos)
 	default:
 		return "";
 	}
+}
+
+int RollRandomNumber(int min, int max)
+{
+	return (rand() % (max - min)) + min;
 }

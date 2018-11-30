@@ -151,21 +151,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AbstractGame.h" />
     <ClInclude Include="BasketballGame.h" />
     <ClInclude Include="Defines.h" />
+    <ClInclude Include="Events.h" />
+    <ClInclude Include="Factory.h" />
+    <ClInclude Include="MockUI.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Renderable.h" />
     <ClInclude Include="RenderBuffer.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Team.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="UIElements.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AbstractGame.cpp" />
     <ClCompile Include="BasketballGame.cpp" />
     <ClCompile Include="Defines.cpp" />
+    <ClCompile Include="Events.cpp" />
+    <ClCompile Include="Factory.cpp" />
+    <ClCompile Include="MockUI.cpp" />
     <ClCompile Include="Module11_v2.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -175,6 +180,7 @@
     </ClCompile>
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RenderBuffer.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Team.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="UIElements.cpp" />
