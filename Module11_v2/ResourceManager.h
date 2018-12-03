@@ -21,17 +21,16 @@ public:
 	const TeamConfig& GetTeam(int teamId);
 	const PlayerConfig& GetPlayer(int playerId);
 	int GetTeamCount();
-	void LoadXml();
-
+	
 private:
 	ResourceManager();
 	~ResourceManager();
 
+	void LoadXml();
 
 
 	std::list<PlayerConfig> m_playerConfigs;
 	std::list<TeamConfig> m_teamConfigs;
-	std::map<int, int> m_playerToTeamMapping;
 	bool m_isLoaded;
 
 	static ResourceManager* s_pInst;

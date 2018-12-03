@@ -9,11 +9,14 @@ ResourceManager* ResourceManager::s_pInst = nullptr;
 ResourceManager::ResourceManager()
 {
 	// we need to load in the XML file for this data
+	LoadXml();
 }
 
 
 ResourceManager::~ResourceManager()
 {
+	m_playerConfigs.clear();
+	m_teamConfigs.clear();
 }
 
 void ResourceManager::LoadXml()
@@ -24,24 +27,22 @@ void ResourceManager::LoadXml()
 	XMLElement* root = doc.FirstChildElement("config");
 	// get the teams first
 	XMLNode* teamsNode = root->FirstChildElement("teams");
-
+	// loop through all the data for this team
 	for (XMLElement* teamElem = teamsNode->FirstChildElement("team"); teamElem != NULL; teamElem = teamElem->NextSiblingElement())
 	{
 		int id = -1;
 		const char* name = "foo";
 		const char* city = "foo";
 		const char* shortName = "ff";
-		
+		// luckily, everything is an attribute if the tag
 		teamElem->QueryAttribute("id", &id);
 		teamElem->QueryStringAttribute("name", &name);
 		teamElem->QueryStringAttribute("city", &city);
 		teamElem->QueryStringAttribute("short_name", &shortName);
-
-		std::string name2 = std::string(name);
+		// create the struct
 		m_teamConfigs.push_back({ id, name, city, shortName });
 	}
 	// now grab the players
-	// get the teams first
  	XMLNode* playersNode = root->FirstChildElement("players");
 
 	for (XMLElement* playerElem = playersNode->FirstChildElement("player"); playerElem != NULL; playerElem = playerElem->NextSiblingElement())
@@ -53,7 +54,7 @@ void ResourceManager::LoadXml()
 		int off3Point = 0;
 		int def = 0;
 		const char* position = "";
-
+		// pull what you can from the attributes
 		playerElem->QueryAttribute("id", &id);
 		playerElem->QueryStringAttribute("name", &name);
 		playerElem->QueryStringAttribute("team", &team);
@@ -63,7 +64,7 @@ void ResourceManager::LoadXml()
 		offenseNode->FirstChildElement("two_point")->QueryIntText(&off2Point);
 		offenseNode->FirstChildElement("three_point")->QueryIntText(&off3Point);
 		playerElem->FirstChildElement("defense")->QueryIntText(&def);
-
+		// and push the struct
 		m_playerConfigs.push_back({ id, name, team, off2Point, off3Point, def, position });
 	}
 }
@@ -115,14 +116,7 @@ const TeamConfig& ResourceManager::GetTeam(int teamId)
 			return team;
 		}
 	}
-	//std::list<TeamConfig>::iterator it;
-	//for (it = m_teamConfigs.begin(); it != m_teamConfigs.end(); it++)
-	//{
-	//	if (it->id == teamId)
-	//	{
-	//		return *it;
-	//	}
-	//}
+
 	return k_DefaultTeamConfig;
 }
 int ResourceManager::GetTeamCount()
