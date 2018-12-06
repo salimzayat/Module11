@@ -1,6 +1,5 @@
 #pragma once
 
-#include <map>
 #include <list>
 #include "Defines.h"
 
@@ -16,23 +15,25 @@ public:
 		}
 		return s_pInst;
 	}
-
+	// get all the player ids for the given tem
 	std::list<int> GetPlayerIdsForTeam(int teamId);
+	// return a reference to the team config for the team id
 	const TeamConfig& GetTeam(int teamId);
+	// return a reference to the player config for the player id
 	const PlayerConfig& GetPlayer(int playerId);
-	int GetTeamCount();
+	// return the number of teams
+	int GetTeamCount() { return m_teamConfigs.size(); }
 	
 private:
 	ResourceManager();
 	~ResourceManager();
-
+	// load the xml file
 	void LoadXml();
-
-
+	// the player configs
 	std::list<PlayerConfig> m_playerConfigs;
+	// the team configs
 	std::list<TeamConfig> m_teamConfigs;
-	bool m_isLoaded;
-
+	// the static inst
 	static ResourceManager* s_pInst;
 
 };

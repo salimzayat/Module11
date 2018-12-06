@@ -11,7 +11,19 @@ BasketballTeam::BasketballTeam(int id, const char* pName, const char* pCity, con
 	, m_pAbbreviation(pAbbreviation)
 	, m_score(0)
 {
-	
+	m_delegate = new ConcreteEventDispatcher();
+}
+
+BasketballTeam::~BasketballTeam()
+{
+	m_players.clear();
+	delete m_delegate;
+}
+
+void BasketballTeam::DispatchAndDeleteEvent(Event* pEvent)
+{
+	m_delegate->DispatchEvent(pEvent);
+	delete pEvent;
 }
 
 Player* BasketballTeam::SelectPlayer()
@@ -29,12 +41,9 @@ Player* BasketballTeam::SelectPlayer()
 			break;
 		}
 	}
-	
 	// return it
-	// see if this workds
-	pResult->DispatchEvent(new ReceivePassEvent(pResult));
+	pResult->ReceivePass();
 	return pResult;
-
 }
 
 Player* BasketballTeam::GetPlayerForPosition(Position position)
@@ -47,6 +56,11 @@ Player* BasketballTeam::GetPlayerForPosition(Position position)
 		}
 	}
 	return nullptr;
+}
+
+Player* BasketballTeam::GetPlayerGuarding(Player* pOpponentPlayer)
+{
+	return GetPlayerForPosition(pOpponentPlayer->GetPosition());
 }
 
 void BasketballTeam::OnEvent(Event* pEvent)
@@ -69,14 +83,10 @@ void BasketballTeam::HandleAttempShot(AttemptShotEvent* pEvent)
 		// update the score
 		m_score += pEvent->GetExpectedPoints();
 		// and dispatch
-		DispatchEvent(new ScoreUpdateEvent(this));
+		DispatchAndDeleteEvent(new ScoreUpdateEvent(this));
 	}
 }
 
-Player* BasketballTeam::GetPlayerGuarding(Player* pOpponentPlayer)
-{
-	return GetPlayerForPosition(pOpponentPlayer->GetPosition());
-}
 
 void BasketballTeam::HandlePlayerReceivePass(ReceivePassEvent* pEvent)
 {
@@ -84,5 +94,6 @@ void BasketballTeam::HandlePlayerReceivePass(ReceivePassEvent* pEvent)
 	// that player switch to the player who just received a pass
 	// at that point, you might set your player to be in a strategy that players them
 	// up on the ball. We will just print it out
-	std::cout << "oppponent " << pEvent->GetPlayer()->GetName() << " just received a pass. guarded by " << GetPlayerForPosition(pEvent->GetPlayer()->GetPosition())->GetName() << std::endl;
+	std::cout << "oppponent " << pEvent->GetPlayer()->GetName() << " just received a pass. guarded by " 
+		<< GetPlayerForPosition(pEvent->GetPlayer()->GetPosition())->GetName() << std::endl;
 }

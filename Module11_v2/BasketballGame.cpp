@@ -7,9 +7,15 @@
 BasketballGame::BasketballGame()
 	: m_pTeam1(nullptr)
 	, m_pTeam2(nullptr)
+	, m_isOver(false)
 {
 	// assume the current team is the first one
 	m_pCurTeam = m_pTeam1;
+	m_delegate = new ConcreteEventDispatcher();
+	m_pUI = new SimpleUI();
+	// and add the few events we know we need
+	AddListener(EventType::GAME_SCORE_UPDATE, m_pUI);
+	AddListener(EventType::GAME_OVER, m_pUI);
 }
 
 BasketballGame::~BasketballGame()
@@ -23,6 +29,14 @@ BasketballGame::~BasketballGame()
 	{
 		delete m_pTeam2;
 	}
+	delete m_delegate;
+	delete m_pUI;
+}
+
+void BasketballGame::DispatchAndDeleteEvent(Event* pEvent)
+{
+	m_delegate->DispatchEvent(pEvent);
+	delete pEvent;
 }
 
 void BasketballGame::Run()
@@ -31,15 +45,11 @@ void BasketballGame::Run()
 	do
 	{
 		Step();
-		Render();
 	} while (!IsOver());
-	Shutdown();
 }
 
 void BasketballGame::Initialize()
 {
-	// let's relive the 2016 championships again
-	ResourceManager::GetInst()->LoadXml();
 	Factory factory;
 
 	int numTeams = ResourceManager::GetInst()->GetTeamCount();
@@ -53,10 +63,11 @@ void BasketballGame::Initialize()
 	PopulateTeam(m_pTeam2, m_pTeam1, factory);
 
 	// and the event listeners
-	m_pTeam1->AddListener(EventType::SCORE_UPDATE, this);
-	m_pTeam2->AddListener(EventType::SCORE_UPDATE, this);
+	m_pTeam1->AddListener(EventType::TEAM_SCORE_UPDATE, this);
+	m_pTeam2->AddListener(EventType::TEAM_SCORE_UPDATE, this);
 
 	m_pCurTeam = m_pTeam1;
+	m_isOver = false;
 }
 
 void BasketballGame::PopulateTeam(BasketballTeam* pTeam, BasketballTeam* pOpponent, Factory factory)
@@ -67,12 +78,13 @@ void BasketballGame::PopulateTeam(BasketballTeam* pTeam, BasketballTeam* pOppone
 		Player* pPlayer = factory.GetPlayer(id);
 		pTeam->AddPlayer(pPlayer);
 		// and add listeners
+		pPlayer->AddListener(EventType::RECEIVE_PASS, m_pUI);
+		pPlayer->AddListener(EventType::ATTEMPT_SHOT, m_pUI);
 		pPlayer->AddListener(EventType::ATTEMPT_SHOT, pTeam);
 		pPlayer->AddListener(EventType::RECEIVE_PASS, pOpponent);
 	}
+
 }
-
-
 
 void BasketballGame::Step()
 {
@@ -104,42 +116,17 @@ BasketballTeam* BasketballGame::SwapCurrentTeam()
 bool BasketballGame::IsOver()
 {
 	// check the score to our target score of 11
-	return ((m_pTeam1->GetScore() >= 11) || (m_pTeam2->GetScore() >= 11));
-}
-
-void BasketballGame::Render()
-{
-	//std::cout << "=============================" << std::endl;
-	//std::cout << "| " << m_pTeam1->GetName() << " :: " << m_pTeam1->GetScore() << std::endl;
-	//std::cout << "-----------------------------" << std::endl;
-	//std::cout << "| " << m_pTeam2->GetName() << " :: " << m_pTeam2->GetScore() << std::endl;
-	//std::cout << "=============================" << std::endl;
-} 
-
-void BasketballGame::Shutdown()
-{
-	// print out the winner
-	if (m_pTeam1->GetScore() > m_pTeam2->GetScore()) 
-	{
-		std::cout << m_pTeam1->GetName() << " WIN!!" << std::endl;
-	}
-	else if (m_pTeam2->GetScore() > m_pTeam1->GetScore())
-	{
-		std::cout << m_pTeam2->GetName() << " WIN!!" << std::endl;
-	}
-	else
-	{
-		std::cout << m_pTeam1->GetName() << " and " << m_pTeam2->GetName() << " tie" << std::endl;
-	}
+	return m_isOver;
 }
 
 void BasketballGame::OnEvent(Event* pEvent)
 {
-	assert(pEvent->GetType() == EventType::SCORE_UPDATE);
+	assert(pEvent->GetType() == EventType::TEAM_SCORE_UPDATE);
 	ScoreUpdateEvent* pScoreUpdateEvent = (ScoreUpdateEvent*)pEvent;
-	DispatchEvent(new GameScoreUpdateEvent(m_pTeam1, m_pTeam2));
-	if (pScoreUpdateEvent->GetScore() >= 11)
+	DispatchAndDeleteEvent(new GameScoreUpdateEvent(m_pTeam1, m_pTeam2));
+	if (pScoreUpdateEvent->GetTeam()->GetScore() >= 11)
 	{
-		DispatchEvent(new GameOverEvent(pScoreUpdateEvent->GetTeam()));
+		m_isOver = true;
+		DispatchAndDeleteEvent(new GameOverEvent(pScoreUpdateEvent->GetTeam()));
 	}
  }

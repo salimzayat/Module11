@@ -3,20 +3,6 @@
 #include <string>
 #include <time.h>
 
-const std::string DeleteMe::k_name = "Cavs";
-
-int CalculateGridIndex(int width, int height, int x, int y)
-{
-	if ((x < 0) || (x >= width) || (y < 0) || (y >= height))
-	{
-		return -1;
-	}
-	else
-	{
-		return y * width + x;
-	}
-}
-
 Position GetPositionForString(const char* pPosition)
 {
 	std::string pos = std::string(pPosition);

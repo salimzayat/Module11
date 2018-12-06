@@ -1,13 +1,6 @@
 #pragma once
 
 #include <string>
-#include "Defines.h"
-
-struct Point2d
-{
-	int x;
-	int y;
-};
 
 enum Position
 {
@@ -20,11 +13,6 @@ enum Position
 	INVALID
 };
 
-int CalculateGridIndex(int width, int height, int x, int y);
-Position GetPositionForString(const char* pPosition);
-const char* GetStringForPosition(Position pos);
-int RollRandomNumber(int min, int max);
-
 struct PlayerConfig
 {
 	int id;
@@ -34,24 +22,6 @@ struct PlayerConfig
 	int offense3Point;
 	int defense;
 	Position position;
-
-	PlayerConfig(int idIn, const char* nameIn, const char* teamIn, int offense2PointIn, int offense3PointIn, int defenseIn, const char* positionIn)
-		: id(idIn)
-		, name(std::string(nameIn))
-		, team(teamIn)
-		, offense2Point(offense2PointIn)
-		, offense3Point(offense3PointIn)
-		, defense(defenseIn)
-		, position(GetPositionForString(positionIn))
-	{
-
-	}
-
-	PlayerConfig()
-		: PlayerConfig(-1, "", "", 0, 0, 0, "")
-	{
-
-	}
 };
 
 struct TeamConfig
@@ -61,27 +31,22 @@ struct TeamConfig
 	std::string city;
 	std::string shortName;
 
-	TeamConfig(int id, const char* name, const char* city, const char* shortName)
-		: id(id)
-		, name(std::string(name))
-		, shortName(std::string(shortName))
-		, city(std::string(city))
-	{
-
-	}
-
-	TeamConfig()
-		: TeamConfig(-1, "", "", "")
-	{
-
-	}
 };
 
-const TeamConfig k_DefaultTeamConfig;
-const PlayerConfig k_DefaultPlayerConfig;
-
-class DeleteMe
+struct ShotResult
 {
-public:
-	static const std::string k_name;
-}; 
+	bool success;
+	int attemptedPoints;	// 2 or 3
+};
+
+// map a string (e.g. "C", "PG") to a position enum value
+Position GetPositionForString(const char* pPosition);
+// map a position enum value to a string (e.g. "C", "PG")
+const char* GetStringForPosition(Position pos);
+// roll a random number between (inclusive) min and (exclusive) max
+int RollRandomNumber(int min, int max);
+
+
+// define two defaults to use if all else fails
+const TeamConfig k_defaultTeamConfig = { -1, "", "", "" };
+const PlayerConfig k_defaultPlayerConfig = { -1, "", "", 0, 0, 0, Position::INVALID };

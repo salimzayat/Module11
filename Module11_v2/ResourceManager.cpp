@@ -34,7 +34,7 @@ void ResourceManager::LoadXml()
 		const char* name = "foo";
 		const char* city = "foo";
 		const char* shortName = "ff";
-		// luckily, everything is an attribute if the tag
+		// luckily, everything is an attribute of the tag
 		teamElem->QueryAttribute("id", &id);
 		teamElem->QueryStringAttribute("name", &name);
 		teamElem->QueryStringAttribute("city", &city);
@@ -44,7 +44,7 @@ void ResourceManager::LoadXml()
 	}
 	// now grab the players
  	XMLNode* playersNode = root->FirstChildElement("players");
-
+	// loop the the child player tags
 	for (XMLElement* playerElem = playersNode->FirstChildElement("player"); playerElem != NULL; playerElem = playerElem->NextSiblingElement())
 	{
 		int id = -1;
@@ -65,7 +65,7 @@ void ResourceManager::LoadXml()
 		offenseNode->FirstChildElement("three_point")->QueryIntText(&off3Point);
 		playerElem->FirstChildElement("defense")->QueryIntText(&def);
 		// and push the struct
-		m_playerConfigs.push_back({ id, name, team, off2Point, off3Point, def, position });
+		m_playerConfigs.push_back({ id, name, team, off2Point, off3Point, def, GetPositionForString(position) });
 	}
 }
 
@@ -97,6 +97,9 @@ std::list<int> ResourceManager::GetPlayerIdsForTeam(int teamId)
 
 const PlayerConfig& ResourceManager::GetPlayer(int playerId)
 {
+	// NOTE: we are iterating through the references
+	// this wouldn't work if we used:
+	// for (PlayerConfig cfg: m_playerConfigs) ...
 	for (PlayerConfig& cfg: m_playerConfigs)
 	{
 		if (cfg.id == playerId)
@@ -104,7 +107,7 @@ const PlayerConfig& ResourceManager::GetPlayer(int playerId)
 			return cfg;
 		}
 	}
-	return k_DefaultPlayerConfig;
+	return k_defaultPlayerConfig;
 }
 
 const TeamConfig& ResourceManager::GetTeam(int teamId)
@@ -117,9 +120,5 @@ const TeamConfig& ResourceManager::GetTeam(int teamId)
 		}
 	}
 
-	return k_DefaultTeamConfig;
-}
-int ResourceManager::GetTeamCount()
-{
-	return m_teamConfigs.size();
+	return k_defaultTeamConfig;
 }

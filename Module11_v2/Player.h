@@ -2,11 +2,6 @@
 #include "Defines.h"
 #include "Events.h"
 
-struct ShotResult
-{
-	bool success;
-	int attemptedPoints;	// 2 or 3
-};
 
 class Defense
 {
@@ -34,23 +29,30 @@ private:
 	int m_rating3Point;
 };
 
-
 class Player : public EventDispatcher
 {
 public:
 
 	Player(int id, const char* pName, Position position);
 	~Player();
-	
+	// attempt a shot against the given opponent
 	void AttemptShot(Player* pOpponent);
-
+	// receive a pass (i.e. select this player)
+	void ReceivePass();
+	// return the components
 	Shooting* GetShootingComponent() { return m_shootingComponent;  }
 	Defense* GetDefenseComponent() { return m_defenseComponent;  }
-
+	// standard getters
 	const char* GetName() { return m_pName; }
 	Position GetPosition() { return m_position; }
 
-	void ReceivePass();
+	virtual void AddListener(EventType t, EventListener* pListener) override { m_delegate->AddListener(t, pListener); }
+	virtual void RemoveListener(EventType t, EventListener* pListener) override { m_delegate->RemoveListener(t, pListener); }
+
+protected:
+	virtual void DispatchEvent(Event* pEvent) override { m_delegate->DispatchEvent(pEvent); }
+	// wrap the dispatch so we can also delete the event immediately afterwards
+	void DispatchAndDeleteEvent(Event* pEvent);
 
 private:
 	const char* m_pName;
@@ -59,29 +61,6 @@ private:
 	
 	Shooting* m_shootingComponent;
 	Defense* m_defenseComponent;
-	
-};
 
-class AttemptShotEvent : public Event
-{
-public:
-	AttemptShotEvent(Player* pPlayer, ShotResult result);
-
-	Player* GetPlayer() { return m_pPlayer; }
-	bool GetSuccess() { return m_result.success; }
-	int GetExpectedPoints() { return m_result.attemptedPoints; }
-
-private:
-	Player* m_pPlayer;
-	ShotResult m_result;
-};
-
-class ReceivePassEvent : public Event
-{
-public:
-	ReceivePassEvent(Player* pPlayer);
-
-	Player* GetPlayer() { return m_pPlayer; }
-private:
-	Player* m_pPlayer;
+	ConcreteEventDispatcher* m_delegate;
 };

@@ -2,9 +2,8 @@
 #include "Events.h"
 #include "Team.h"
 #include "Player.h"
-#include "BasketballGame.h"
 
-class MockUI : public EventListener
+class SimpleUI : public EventListener
 {
 public:
 	virtual void OnEvent(Event* pEvent);

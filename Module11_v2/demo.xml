@@ -31,7 +31,6 @@
     <team city="Memphis" name="Grizzlies" id="28" short_name="MEM"/>
     <team city="New Orleans" name="Pelicans" id="29" short_name="NOR"/>
     <team city="San Antonio" name="Spurs" id="30" short_name="SAS"/>
-    <!--<team city="" name="Free Agents" id="31" short_name="FAN"/>-->  
   </teams>
   <players>
     <player id="1" name="T. Young" team="ATL" position="PG">
