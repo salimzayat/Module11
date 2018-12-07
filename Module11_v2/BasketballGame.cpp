@@ -59,29 +59,49 @@ void BasketballGame::Initialize()
 	m_pTeam1 = factory.GetTeam(teamId);
 	m_pTeam2 = factory.GetTeam((teamId + 1) % numTeams);
 
-	PopulateTeam(m_pTeam1, m_pTeam2, factory);
-	PopulateTeam(m_pTeam2, m_pTeam1, factory);
+	PopulateTeam(m_pTeam1, factory);
+	PopulateTeam(m_pTeam2, factory);
 
-	// and the event listeners
-	m_pTeam1->AddListener(EventType::TEAM_SCORE_UPDATE, this);
-	m_pTeam2->AddListener(EventType::TEAM_SCORE_UPDATE, this);
+	ConfigureListeners();
 
 	m_pCurTeam = m_pTeam1;
 	m_isOver = false;
 }
 
-void BasketballGame::PopulateTeam(BasketballTeam* pTeam, BasketballTeam* pOpponent, Factory factory)
+void BasketballGame::PopulateTeam(BasketballTeam* pTeam, Factory factory)
 {
 	std::list<int> playerIds = ResourceManager::GetInst()->GetPlayerIdsForTeam(pTeam->GetID());
 	for (int id : playerIds)
 	{
 		Player* pPlayer = factory.GetPlayer(id);
 		pTeam->AddPlayer(pPlayer);
-		// and add listeners
-		pPlayer->AddListener(EventType::RECEIVE_PASS, m_pUI);
-		pPlayer->AddListener(EventType::ATTEMPT_SHOT, m_pUI);
-		pPlayer->AddListener(EventType::ATTEMPT_SHOT, pTeam);
-		pPlayer->AddListener(EventType::RECEIVE_PASS, pOpponent);
+	}
+}
+
+void BasketballGame::ConfigureListenerForPlayer(Player* pPlayer, BasketballTeam* pTeam, BasketballTeam* pOpposingTeam)
+{
+	// the UI needs to know when a player either shoots the ball
+	pPlayer->AddListener(EventType::ATTEMPT_SHOT, m_pUI);
+	// and the player's team should know when they attempt a shot
+	pPlayer->AddListener(EventType::ATTEMPT_SHOT, pTeam);
+	// and the other team should know when they receive a pass
+	pPlayer->AddListener(EventType::RECEIVE_PASS, pOpposingTeam);
+}
+
+void BasketballGame::ConfigureListeners()
+{
+	// the game should know when either team scores
+	m_pTeam1->AddListener(EventType::TEAM_SCORE_UPDATE, this);
+	m_pTeam2->AddListener(EventType::TEAM_SCORE_UPDATE, this);
+	// configure the player listeners for one team...
+	for (Player* pPlayer : m_pTeam1->GetPlayers())
+	{
+		ConfigureListenerForPlayer(pPlayer, m_pTeam1, m_pTeam2);
+	}
+	// and do the same for the other team
+	for (Player* pPlayer : m_pTeam2->GetPlayers())
+	{
+		ConfigureListenerForPlayer(pPlayer, m_pTeam2, m_pTeam1);
 	}
 
 }

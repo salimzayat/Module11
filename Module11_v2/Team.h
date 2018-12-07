@@ -22,6 +22,7 @@ public:
 	// get the player associated with a position
 	Player* GetPlayerForPosition(Position position);
 	Player* GetPlayerGuarding(Player* pOpponentPlayer);
+	std::list<Player*> GetPlayers() { return m_players; }
 	// add a player to the team
 	void AddPlayer(Player* pPlayer) { m_players.push_back(pPlayer); }
 	// event methods

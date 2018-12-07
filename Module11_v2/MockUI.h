@@ -6,7 +6,7 @@
 class SimpleUI : public EventListener
 {
 public:
-	virtual void OnEvent(Event* pEvent);
+	virtual void OnEvent(Event* pEvent) override;
 
 private:
 	void OnGameScore(GameScoreUpdateEvent* pEvent);

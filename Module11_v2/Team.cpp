@@ -28,8 +28,7 @@ void BasketballTeam::DispatchAndDeleteEvent(Event* pEvent)
 
 Player* BasketballTeam::SelectPlayer()
 {
-	// apply some heurisitc?  go with the hot-hand?
-	// for now, randomly choose
+	// apply some heurisitc?  go with the hot-hand? for now, randomly choose
 	Player* pResult = m_players.front();
 
 	int place = RollRandomNumber(0, m_players.size());
@@ -86,7 +85,6 @@ void BasketballTeam::HandleAttempShot(AttemptShotEvent* pEvent)
 		DispatchAndDeleteEvent(new ScoreUpdateEvent(this));
 	}
 }
-
 
 void BasketballTeam::HandlePlayerReceivePass(ReceivePassEvent* pEvent)
 {
